@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Firestore } from '@angular/fire/firestore';
 import { UserDataService } from '../../services/user-data.service';
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

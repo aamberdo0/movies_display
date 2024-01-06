@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  Form,
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { Firestore } from '@angular/fire/firestore';
-
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -48,7 +43,6 @@ export class LoginFormComponent implements OnInit {
     if (this.loginForm.value.password === '') {
       return;
     }
-
     try {
       this.authService.login(
         this.loginForm.value.email,
