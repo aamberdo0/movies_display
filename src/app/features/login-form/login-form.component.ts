@@ -46,6 +46,7 @@ export class LoginFormComponent implements OnInit {
       return;
     }
     if (this.loginForm.value.password === '') {
+      return;
     }
 
     try {

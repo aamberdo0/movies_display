@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
     }) 
     this.element1=document.getElementById('Error')!
   }
-
   constructor(private fb:FormBuilder,private auth:AngularFireAuth,
     private router:Router,private authService:AuthService,
     private fireStore:Firestore,private userDataService:UserDataService
@@ -50,33 +49,21 @@ export class RegisterComponent implements OnInit {
     try{
       await this.authService.signup(this.registerForm.value.email,
         this.registerForm.value.password);
-      
-
       const userData={
           email:email,
           password:password
       };
       await this.userDataService.saveUser(userData)
-      this.element1.innerHTML=this.authService.accountMessage; 
-      console.log(this.element1.innerText);
-
+      this.element1.innerHTML=this.authService.accountMessage;
       this.valueText = this.checkText(this.element1.innerText); 
       this.emailElement = '';
       this.passwordElement = '';
       
       if(!this.valueText){
         this.element1.innerHTML = '';
-        console.log(this.valueText); 
         this.registerForm.reset();
         this.router.navigate(['/login']); 
-      }else{
-        
-        console.log(this.valueText);
       }
-      console.log(this.valueText); 
-      
-      
-      
     }catch(error){
       console.log('Sign up failed',error); 
     }
