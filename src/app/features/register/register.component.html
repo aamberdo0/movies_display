@@ -1,0 +1,28 @@
+<h1 color="#001d3d">Register Account</h1>
+<form class="form" [formGroup]="registerForm">
+    <mat-form-field [hideRequiredMarker]="true" class="form-control">
+        <mat-label>Enter your email</mat-label> 
+        <input required [value]="emailElement" matInput formControlName="email" 
+        type="text">
+        <mat-error *ngIf="registerForm.get('email')!.hasError('required')">
+            Email is invalid
+        </mat-error>
+        <div *ngIf="accountErrorMessage">{{accountErrorMessage}}</div>
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true" class="form-control">
+        <mat-label>Enter your password</mat-label> 
+        <input required [value]="passwordElement" matInput 
+        formControlName="password" type="password" placeholder="Enter your password">
+        <mat-error *ngIf="registerForm.get('password')!.hasError('required')">
+            Password is invalid
+          </mat-error>
+    </mat-form-field>
+    <div id="Error" [ngStyle]="{'color':'red'}"></div>
+    <div class="buttonContainer">
+        <button [ngStyle]="{'color':'#001d3d',
+        'background-color':'#fcbf49'}"
+        mat-raised-button (click)="createUser()">Create account</button>
+        <button [ngStyle]="{'color':'#001d3d',
+        'background-color':'#fcbf49'}" class="user" mat-raised-button> <a routerLink="/login">Login</a></button>
+    </div>  
+</form>

@@ -1,0 +1,27 @@
+<h1 color="#001d3d">Login Account</h1>
+<form class="form1" [formGroup]="loginForm" >
+  <mat-form-field [hideRequiredMarker]="true" class="form-control">
+    <mat-label>Enter your email</mat-label>
+    <input required formControlName="email" 
+     matInput type="text" />
+    <mat-error *ngIf="loginForm.get('email')!.hasError('required')">
+      Email is invalid
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field [hideRequiredMarker]="true" class="form-control">
+    <mat-label>Enter your password</mat-label>
+    <input required matInput type="password" 
+    formControlName="password" />
+    <mat-error *ngIf="loginForm.get('password')!.hasError('required')">
+      Password is invalid
+    </mat-error>
+  </mat-form-field>
+  <div id="Error" [ngStyle]="{'color':'red'}"></div>
+  <div class="buttonContainer">
+      <button [ngStyle]="{'color':'#001d3d',
+      'background-color':'#fcbf49'}"
+      mat-raised-button (click)="login(loginForm)">Login</button>
+      <button [ngStyle]="{'color':'#001d3d',
+      'background-color':'#fcbf49'}" class="user" mat-raised-button><a routerLink="/register">Sign Up</a></button>
+  </div>
+</form>
