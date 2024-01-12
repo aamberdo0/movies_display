@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
-import { LoginModule } from './features/login/login.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RegisterComponent } from './features/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,7 +23,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
-
+import { UpcomingComponent } from './upcoming/upcoming.component';
+import { TrendingComponent } from './trending/trending.component';
+import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SearchComponent } from './search/search.component';
+import { LogOutComponent } from './features/log-out/log-out.component';
+import { LoggedOutComponent } from './logged-out/logged-out.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -32,12 +39,15 @@ import {MatMenuModule} from '@angular/material/menu';
     HomeComponent,
     RegisterComponent,
     MainNavComponent,
-    
+    UpcomingComponent,
+    TrendingComponent,
+    SearchComponent,
+    LogOutComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
@@ -47,13 +57,16 @@ import {MatMenuModule} from '@angular/material/menu';
     FormsModule,
     MatButtonModule,
     MatMenuModule,
-  
-  provideFirebaseApp(()=> initializeApp(environment.firebase)),
-  provideFirestore(() => getFirestore()),
-  MatToolbarModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule
+    MatCardModule,
+    HttpClientModule,
+    FlexLayoutModule,
+    MatProgressSpinnerModule,
+    provideFirebaseApp(()=> initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     {provide:FIREBASE_OPTIONS, useValue:environment.firebase}

@@ -21,7 +21,7 @@ a{
 }
 a:visited{
     text-decoration: none;
-    color:#001d3d
+    color:#060404;
 }
 
 .form1{
@@ -39,7 +39,7 @@ h1{
     transform: translateY(-50%);
     text-align: center;
     font-weight:bold;
-    color:#001d3d;;
+    color:#C1F2B0;
 }
 @media  screen and (max-width: 350px){
     .form{

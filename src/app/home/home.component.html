@@ -1,3 +1,36 @@
-<app-main-nav></app-main-nav>
-<p>Hello</p>
-<button (click)="logout()">Logout</button>
+<div class="container">
+    <video control autoplay muted loop id="myVideo">
+      <source src="../../assets/models/motion2.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="text-container">
+      <h1>Welcome to Movies Data Portal</h1>
+      <h3>
+        Movies Portal Database enhances user’s cinematic experience in displaying
+        details on movie titles, genres, release dates and ratings information.
+        The portal provides a user-friendly platform for users to explore and
+        access a diverse set of movies and its description with popular release.
+      </h3>
+    <div class="second-portion">
+      <h2>Please browse these following options</h2>
+      <div class="buttonDiv">
+        <button class="mat-raised-button" mat-raised-button routerLink="/search">
+          Search
+        </button>
+        <button
+          class="mat-raised-button"
+          mat-raised-button
+          routerLink="/upcoming">
+          Upcoming
+        </button>
+        <button
+          class="mat-raised-button"
+          mat-raised-button
+          routerLink="/trending">
+          Trending
+        </button>
+      </div>
+    </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,21 @@
+h1{
+    position:relative;
+    top:250px;
+    font-weight: bold;
+   
+}
+mat-spinner{
+    position: absolute;
+    margin-left: 45%;
+    margin-right: 45%;
+    top:55%;
+}
+.mat-mdc-progress-spinner{
+    --mdc-circular-progress-active-indicator-color:#C1F2B0;
+  }
+body{
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}

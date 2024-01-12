@@ -1,4 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    margin:0;
+    background-color: #060404;
+    color:black;
+}
+h1{
+    text-align: center;
+    color:#C1F2B0;
+    
+}
+button.user{
+    color:#060404;
+    background-color:#C1F2B0;
+  }
+mat-card{
+    width:100%;
+    padding:20px 20px;
+    gap:20px;
+    border-radius:8px;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+mat-card-title.mat-mdc-card-title{
+    padding:0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size:20px;
+}
+.user{
+    color:#C1F2B0;
+    background-color:#001d3d;
+}
+mat-card-content{
+    text-align: center;
+}
+img{
+    width:100%;
+    height:100%;
+    object-fit:cover; 
+}
+.container{
+    padding:24px;
+}
+.responsive-grid{
+    display:grid; 
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap:24px;
+}
+@media screen and (max-width: 551px)  {
+    mat-card{
+        width:75%;
+        margin: 0 auto;
+    }
+}

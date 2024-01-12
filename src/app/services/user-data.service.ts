@@ -5,8 +5,7 @@ import { addDoc, collection } from 'firebase/firestore';
 @Injectable({
   providedIn: 'root'
 })
-export class UserDataService {
-
+export  class UserDataService {
   constructor(private fireStore:Firestore) { }
   async saveUser(userData:any):Promise<void>{
     try{

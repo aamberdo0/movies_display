@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { UserDataService } from './user-data.service';
 import { Firestore } from '@angular/fire/firestore';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -11,12 +12,13 @@ import { Firestore } from '@angular/fire/firestore';
 export class AuthService {
   private isLoggedIn: boolean = false;
   accountMessage!: string;
-
+  
   constructor(
     private fireAuth: AngularFireAuth,
     private router: Router,
     private fireStore: Firestore,
-    private userDataService: UserDataService
+    private userDataService: UserDataService,
+    private location:Location
   ) {}
 
   getIsLoggedIn(): boolean {
@@ -27,12 +29,11 @@ export class AuthService {
     try {
       await this.fireAuth.signInWithEmailAndPassword(email, password);
       localStorage.setItem('token', 'true');
-      this.router.navigate(['']);
+      this.router.navigate(['']); // <-- Make sure this is the correct route
     } catch (err) {
       this.handleError(err);
     }
   }
-
   async signup(email: string, password: string) {
     try {
       await this.fireAuth.createUserWithEmailAndPassword(email, password);
@@ -42,23 +43,33 @@ export class AuthService {
       };
       await this.userDataService.saveUser(userData);
       this.isLoggedIn = true;
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login']); // <-- Make sure this is the correct route
     } catch (err) {
       this.handleError(err);
     }
   }
-  logout() {
-    this.isLoggedIn = false;
-    this.fireAuth.signOut().then(() => {
-        localStorage.removeItem('token');
-        this.router.navigate(['/login']);
-      },
-      (err) => {
-        console.log(err.message);
+  
+  async logout() {
+    try {
+      await this.fireAuth.signOut(); 
+      const user = await this.fireAuth.currentUser;
+      if (!user) {
+        this.router.navigate(['/logged-out']); // <-- Make sure this is the correct route
+      } else {
+        console.error('User still authenticated after sign-out.');
       }
-    );
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
   }
-
+  
+  cancel():void{
+   this.router.navigate(['/home']);
+    const currentURL = this.router.navigate(['/home']);;
+    console.log(currentURL);
+    console.log(this.location.back());
+  
+  }
   handleError(err: any) {
     this.isLoggedIn = true;
     switch (err.code) {

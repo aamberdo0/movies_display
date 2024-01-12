@@ -1,28 +1,11 @@
-<mat-sidenav-container 
-class="sidenav-container"  >
-  <mat-sidenav  #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-      <mat-toolbar id="menuText">Movie Portal</mat-toolbar>
-      <mat-nav-list >
-        <a mat-list-item routerLink="/home">
-          <div class="menu-nav">
-            <mat-icon >home</mat-icon>Home
-          </div>
-        </a>
-        <a mat-list-item routerLink="/upcoming">
-          <div class="menu-nav">
-            <mat-icon >calendar</mat-icon>Upcoming
-          </div>
-        </a>
-        <a mat-list-item routerLink="/trending">
-          <div class="menu-nav">
-            <mat-icon >show_chart</mat-icon>Trending
-          </div>
-        </a>
-      
-      </mat-nav-list>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -32,7 +15,7 @@ class="sidenav-container"  >
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon class="ham-menu"aria-label="Side nav toggle icon">menu</mat-icon>
+  
       </button>
       <span class="portal">
         <mat-icon class="fire">local_fire_department</mat-icon>
@@ -41,35 +24,35 @@ class="sidenav-container"  >
       <span class="example-spacer"></span>
       <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="20px" class="menu-items">
-          <li> <a class="example-icon" routerLink="/search">
-            <mat-icon>search</mat-icon></a></li>
-          <li> <a class="example-icon" routerLink="/myList">
-            <mat-icon>assignment</mat-icon></a></li>
-          <li> <a class="example-icon"  routerLink="/register">
-            <mat-icon>account_circle</mat-icon></a></li>
+          <button class="user" mat-raised-button routerLink="/home">
+            Home
+          </button>
+          <button class="user" mat-raised-button routerLink="/logout">
+            Log Out
+          </button>
         </ul>
       </div>
       <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.gt-xs>
-        <button mat-icon-button [matMenuTriggerFor]="menu" 
-        aria-label="Example icon-button with a menu">
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu">
           <mat-icon class="valign-center">more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="/search">
-            <mat-icon >search</mat-icon> 
-            <span>Search</span>
+          <button
+            class="user"
+            mat-raised-button
+            color="primary"
+            routerLink="/home">
+            Home
           </button>
-          <button mat-menu-item routerLink="/myList">
-            <mat-icon>assignment</mat-icon>
-            <span>My List</span>
-          </button>
-          <button mat-menu-item routerLink="/register">
-            <mat-icon>account_circle</mat-icon>
-            <span>Account</span>
+          <button class="user" mat-raised-button routerLink="/logout">
+            Log Out
           </button>
         </mat-menu>
       </div>
     </mat-toolbar>
-    <ng-component></ng-component>
+   
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,0 +1,8 @@
+<h1 class="title">Latest Upcoming Movies</h1>
+<div class="container responsive-grid">
+    <mat-card *ngFor="let movie of data">
+        <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500/'+ movie.poster_path">
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-content>Release Date: {{movie.release_date}}</mat-card-content>
+    </mat-card>
+</div>

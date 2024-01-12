@@ -1,0 +1,13 @@
+<h1 class="title">Trending Movies</h1>
+<div class="container responsive-grid">
+    <mat-card *ngFor="let movie of data">
+        <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500/'+ movie.poster_path">
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        <mat-card-content>{{movie.id}}</mat-card-content>
+        <button 
+        class="user" mat-raised-button (click)="fetchCredits(movie.id)">Show Cast & Crew</button>
+    </mat-card>
+</div>
+
+  
+

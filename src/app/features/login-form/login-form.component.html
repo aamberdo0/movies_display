@@ -18,10 +18,13 @@
   </mat-form-field>
   <div id="Error" [ngStyle]="{'color':'red'}"></div>
   <div class="buttonContainer">
-      <button [ngStyle]="{'color':'#001d3d',
-      'background-color':'#fcbf49'}"
-      mat-raised-button (click)="login(loginForm)">Login</button>
-      <button [ngStyle]="{'color':'#001d3d',
-      'background-color':'#fcbf49'}" class="user" mat-raised-button><a routerLink="/register">Sign Up</a></button>
+      <button [ngStyle]="{'color':'#060404',
+      'background-color':'#C1F2B0'}"
+      mat-raised-button (click)="login(loginForm)">
+      Login</button>
+      <button [ngStyle]="{'color':'#060404',
+      'background-color':'#C1F2B0'}" class="user" 
+      mat-raised-button routerLink="/register">Register
+     </button>
   </div>
 </form>
