@@ -24,7 +24,7 @@ export class TrendingComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private movieService: MovieService,
-    private router: Router // Inject the Router
+    private router: Router
   ) {}
 
   get isLoggedIn(): boolean {
