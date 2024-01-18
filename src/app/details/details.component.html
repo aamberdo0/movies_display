@@ -1,0 +1,61 @@
+<h1>Hello, {{ currentId }}</h1>
+<div class="first-part">
+  <div class="square">
+    <img class="poster" [src]="'https://image.tmdb.org/t/p/w500/' + picture" />
+  </div>
+  <div class="right-part">
+    <div class="movie-info">
+      <h3>{{ genre | uppercase }}</h3>
+      <h1 class="title">{{ title }}</h1>
+      <p class="description">{{ description }}</p>
+    </div>
+    <div class="button-click">
+      <div class="rating-box">
+        <h2 class="rating">{{ rating }}</h2>
+        <p class="rate">Rate</p>
+      </div>
+      <div class="rating-box">
+        <h2 class="rating">{{ year }}</h2>
+        <p class="rate">Released</p>
+      </div>
+      <button class="user" mat-raised-button>Trailer</button>
+    </div>
+  </div>
+</div>
+<div class="cast">
+  <h3 class="crew-list">Cast and Crew</h3>
+  <div class="cast-list">
+    <div class="actor-info" *ngFor="let movie of actorName(cast)">
+      <div class="circular-container">
+        <img class="profile-pic" [src]="'https://image.tmdb.org/t/p/w500' 
+        + movie.profile"/>
+      </div>
+      <div class="actor">
+        <p class="actor-name">{{ movie.name }}</p>
+        <p class="actor-role">{{ movie.role }}</p>
+      </div>
+    </div>
+    <div class="actor-info" *ngFor="let movie of director(crew)">
+      <div class="circular-container">
+        <img class="profile-pic" [src]="'https://image.tmdb.org/t/p/w500' 
+        + movie.profile"/>
+      </div>
+      <div class="actor">
+        <p class="actor-name">{{ movie.name }}</p>
+        <p class="actor-role">{{ movie.role }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+<h2>{{rating}}</h2>
+<p>{{title}}</p>
+<p>{{description}}</p>
+<div *ngFor="let movie of actorName(cast)">
+    {{movie}}
+</div>
+<p>{{director(crew)}}</p>
+
+This is a single-line comment <div *ngFor="let movie of crew">
+
+</div> -->

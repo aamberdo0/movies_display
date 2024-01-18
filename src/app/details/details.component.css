@@ -1,0 +1,124 @@
+h2,body,p,div,h1{
+    color:#C1F2B0;
+
+}
+.first-part{
+    padding:46px 20px; 
+}
+
+.title{
+    text-align: unset;
+    font-weight: bold;
+    
+}
+.actor{
+    font-size: 18px;
+}
+.crew-list{
+    font-weight:bolder;
+    padding:0px 40px;
+    font-size:20px;
+}
+.genre{
+    margin:0 0 8px;
+}
+.movie-info{
+    margin:0 10px;
+}
+.poster{
+    display: block;
+    width: 260px;
+    height: 320px;
+    border-radius: 15px;
+}
+.rating{
+    margin:0px;
+    font-weight: bolder;
+    text-align: center;
+}
+.rate{
+   text-transform: uppercase;
+   text-align: center;
+}
+.square{
+    padding:0px 20px;
+}
+.first-part,.button-click{
+    display: flex;
+    flex-direction: row;
+    margin:0 10px;
+}
+.actor-info{
+    display:flex;
+    align-items: center;
+    gap:15px;
+    padding:20px;
+}
+.cast-list{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    position: relative;
+    left:10%;
+}
+.circular-container{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.button-click{
+    align-items: center;
+    gap:75px;
+    padding-top:13px;
+}
+@media  screen and (max-width: 705px){
+    .first-part{
+        flex-direction: column;
+        align-items: center;
+        padding:0px 20px;
+    }
+    .cast-list{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .right-part{
+        padding:20px 0px;
+    }
+}
+@media  screen and (max-width: 480px){
+    .title{
+        font-size:1.5em;
+    }
+
+}
+@media  screen and (max-width: 390px){
+    .first-part{
+        padding:0px;
+    }
+    .button-click{
+        gap:3rem;
+    }
+    .crew-list{
+        padding:13px 30px;
+    }
+}
+@media  screen and (max-width: 335px){
+    .button-click{
+        flex-direction: column;
+        gap:5px;
+    }
+    .rating,.rate{
+        font-size:1rem;
+    }
+}
+@media  screen and (min-width: 1150px){
+    .first-part{
+        margin:0px 180px;
+    }
+}
+@media  screen and (min-width: 915px){
+    .first-part{
+        margin:0px 70px;
+    }
+}

@@ -10,6 +10,7 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { SearchComponent } from './search/search.component';
 import { LogOutComponent } from './features/log-out/log-out.component';
 import { LoggedOutComponent } from './logged-out/logged-out.component';
+import { DetailsComponent } from './details/details.component';
 
 
 const redirectUnauthorizedToLogin = ()=>redirectUnauthorizedTo(['login']); 
@@ -33,6 +34,7 @@ const routes: Routes = [
   data: { authGuardPipe: redirectUnauthorizedToLogin } },
   { path: 'logout', component:LogOutComponent},
   { path: 'logged-out', component:LoggedOutComponent},
+  { path: 'details/:id', component: DetailsComponent },
 
 ];
 

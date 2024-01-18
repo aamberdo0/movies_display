@@ -32,6 +32,7 @@ import { SearchComponent } from './search/search.component';
 import { LogOutComponent } from './features/log-out/log-out.component';
 import { LoggedOutComponent } from './logged-out/logged-out.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     TrendingComponent,
     SearchComponent,
     LogOutComponent,
+    DetailsComponent,
 
   ],
   imports: [
