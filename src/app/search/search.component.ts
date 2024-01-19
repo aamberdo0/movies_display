@@ -1,9 +1,9 @@
-import { Component,OnInit } from '@angular/core';
+// search.component.ts
+import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../services/Movie.service';
 import { SearchResult } from '../../assets/models/SearchResult';
-import { FormBuilder,FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',

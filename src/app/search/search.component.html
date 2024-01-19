@@ -10,16 +10,15 @@
         <mat-card-header>
             <img mat-card-image *ngIf="movie.backdrop_path!==null; else notFound" 
             [src]="'https://image.tmdb.org/t/p/w500/'+ movie.backdrop_path">
-            <ng-template #notFound><h1>Not Found image</h1></ng-template>
+            <ng-template #notFound>
+                <img [src]="'../../assets/models/not-found.png'">
+            </ng-template>
         </mat-card-header>
         <mat-card-content>
             <p>{{generateStar(movie.vote_average)}}</p>  
             <p>{{movie.title}}</p>
             <p>{{movie.release_date}}</p>
             <p class="overview">{{ movie.overview | slice:0:200 }}{{ movie.overview.length > 150 ? '...' : '' }}</p>
-            <button>
-                <mat-icon>favorite</mat-icon>
-            </button>
         </mat-card-content>
     </mat-card>
 </div>

@@ -33,6 +33,7 @@ import { LogOutComponent } from './features/log-out/log-out.component';
 import { LoggedOutComponent } from './logged-out/logged-out.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { DetailsComponent } from './details/details.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { DetailsComponent } from './details/details.component';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FontAwesomeModule
   ],
   providers: [
     {provide:FIREBASE_OPTIONS, useValue:environment.firebase}

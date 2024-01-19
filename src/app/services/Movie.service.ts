@@ -20,7 +20,8 @@ export class MovieService {
 
   getSearch(searchValue: string): Observable<SearchResult[]> {
     return this.http.get<SearchResult[]>(
-      `${this.apiSeach}movie/upcoming${this.languageURL}&${this.apiKey}`
+      `${this.apiSeach}/search/movie?query=${searchValue}` +
+      `&${this.apiKey}&language=en-US&page=1`
     );
   }
 

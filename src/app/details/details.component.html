@@ -1,34 +1,41 @@
-<h1>Hello, {{ currentId }}</h1>
+
+<body>
+  <a (click)="back()">
+    <mat-icon class="close">close</mat-icon>
+  </a>
 <div class="first-part">
   <div class="square">
-    <img class="poster" [src]="'https://image.tmdb.org/t/p/w500/' + picture" />
+    <img class="poster" [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.picture " 
+     />
   </div>
   <div class="right-part">
     <div class="movie-info">
-      <h3>{{ genre | uppercase }}</h3>
-      <h1 class="title">{{ title }}</h1>
-      <p class="description">{{ description }}</p>
+      <h3>{{ movieDetails.genre| uppercase }}</h3>
+      <h1 class="title">{{ movieDetails.title }}</h1>
+      <p class="description">{{ movieDetails.description }}</p>
     </div>
     <div class="button-click">
       <div class="rating-box">
-        <h2 class="rating">{{ rating }}</h2>
+        <h2 class="rating">{{ movieDetails.rating }}</h2>
         <p class="rate">Rate</p>
       </div>
       <div class="rating-box">
-        <h2 class="rating">{{ year }}</h2>
+        <h2 class="rating">{{ movieDetails.year }}</h2>
         <p class="rate">Released</p>
       </div>
-      <button class="user" mat-raised-button>Trailer</button>
+      <a class="user" mat-raised-button href="{{movieDetails.trailer}}">
+        Watch Trailer
+      </a>
     </div>
   </div>
 </div>
 <div class="cast">
   <h3 class="crew-list">Cast and Crew</h3>
   <div class="cast-list">
-    <div class="actor-info" *ngFor="let movie of actorName(cast)">
+    <div class="actor-info" *ngFor="let movie of actorName(movieDetails.cast)">
       <div class="circular-container">
-        <img class="profile-pic" [src]="'https://image.tmdb.org/t/p/w500' 
-        + movie.profile"/>
+        <img class="profile-pic" [src]="
+        movie.profile "/>
       </div>
       <div class="actor">
         <p class="actor-name">{{ movie.name }}</p>
@@ -37,8 +44,9 @@
     </div>
     <div class="actor-info" *ngFor="let movie of director(crew)">
       <div class="circular-container">
-        <img class="profile-pic" [src]="'https://image.tmdb.org/t/p/w500' 
-        + movie.profile"/>
+        <img class="profile-pic" [src]="
+        movie.profile"
+       />
       </div>
       <div class="actor">
         <p class="actor-name">{{ movie.name }}</p>
@@ -47,6 +55,7 @@
     </div>
   </div>
 </div>
+</body>
 <!-- 
 <h2>{{rating}}</h2>
 <p>{{title}}</p>

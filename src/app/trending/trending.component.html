@@ -5,12 +5,11 @@
   <mat-card *ngFor="let movie of data">
     <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500/'+ movie.poster_path">
     <mat-card-title>{{movie.title}}</mat-card-title>
-    <mat-card-content>{{movie.id}}</mat-card-content>
     <button
       class="user"
       mat-raised-button
       [routerLink]="['/details', movie.id]" >
-    Show Cast & Crew</button>
+    Movie Details</button>
   </mat-card>
 </div>
 

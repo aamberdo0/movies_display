@@ -1,8 +1,14 @@
 // details.component.ts
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { MovieService } from '../services/Movie.service';
+import { MovieDetails } from '../../assets/models/MovieDetails';
+import { Actor } from '../../assets/models/actor';
+import { Director } from '../../assets/models/director';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-details',
@@ -10,21 +16,18 @@ import { MovieService } from '../services/Movie.service';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent implements OnInit {
+  
   currentId!: number;
-  description!: string;
-  title!: string;
-  rating!: number;
-  cast!: any;
-  crew!: any;
-  picture!: string;
-  genre!: string;
-  year!: string;
-  imgActor!: string;
-  directorName!: string;
-  directorRole!: string;
+  movieDetails!: MovieDetails;
+  faMark = faXmark;
+  actor!: string[];
+  crew!: string[];
+  defaultImg : string = "assets/models/profile.jpeg";
   constructor(
     private movieService: MovieService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private secondRoute:Router,
+    private location:Location,
   ) {}
 
   ngOnInit(): void {
@@ -39,41 +42,46 @@ export class DetailsComponent implements OnInit {
   }
   fetchCredits(movieId: number) {
     this.movieService.getCredits(movieId).subscribe((result) => {
-      console.log(result);
-      this.title = result.original_title;
-      this.description = result.overview;
-      this.rating = result.vote_average;
-      this.cast = result.credits.cast.slice(0, 5);
-      this.crew = result.credits.crew.filter(
-        (crewMember: any) => crewMember.job === 'Director'
+      this.movieDetails = new MovieDetails(
+        result.original_title,
+        result.overview,
+        result.vote_average,
+        (this.actor = result.credits.cast.slice(0, 5)),
+        (this.crew = result.credits.crew.filter(
+          (crewMember: any) => crewMember.job === 'Director'
+        )),
+        result.poster_path,
+        result.genres[0].name,
+        result.release_date.split('-')[0],
+        result.homepage
       );
-      this.picture = result.poster_path;
-
-      this.year = result.release_date.split('-')[0];
-      this.genre = result.genres[0].name;
-      console.log(this.year);
     });
   }
-  actorName(
-    arrayName: any[]
-  ): { name: string; profile: string; role: string }[] {
-    return arrayName?.map((item) => ({
-      name: item.name,
-      profile: item.profile_path,
-      role: this.replaceWord(item.known_for_department, 'Acting', 'Actor'),
-    }));
+  back(){
+    this.location.back();
+  }
+  actorName(arrayName: any[]): Actor[] {
+    return arrayName?.map(
+      (item) =>
+        new Actor(
+          item.name,
+          item.profile_path ?'https://image.tmdb.org/t/p/w500/' + item.profile_path : this.defaultImg,
+          this.replaceWord(item.known_for_department, 'Acting', 'Actor')
+        )
+    );
   }
   replaceWord(name: string, wordReplace: string, desiredWord: string): string {
     return name.replace(wordReplace, desiredWord);
   }
 
-  director(
-    arrayName: any[]
-  ): { name: string; profile: string; role: string }[] {
-    return arrayName?.map((item) => ({
-      name: item.name,
-      profile: item.profile_path,
-      role: item.job,
-    }));
+  director(arrayName: any[]): Director[] {
+    return arrayName?.map(
+      (item) =>
+        new Director(
+          item.name,
+          item.profile_path ?'https://image.tmdb.org/t/p/w500/' + item.profile_path : this.defaultImg,
+          this.replaceWord(item.department, 'Directing', 'Director')
+        )
+    );
   }
 }
