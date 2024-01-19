@@ -11,7 +11,7 @@
             <img mat-card-image *ngIf="movie.backdrop_path!==null; else notFound" 
             [src]="'https://image.tmdb.org/t/p/w500/'+ movie.backdrop_path">
             <ng-template #notFound>
-                <img [src]="'../../assets/models/not-found.png'">
+                <img [src]="'../../assets//movies/not-found.png'">
             </ng-template>
         </mat-card-header>
         <mat-card-content>

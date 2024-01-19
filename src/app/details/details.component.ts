@@ -6,8 +6,6 @@ import { MovieService } from '../services/Movie.service';
 import { MovieDetails } from '../../assets/models/MovieDetails';
 import { Actor } from '../../assets/models/actor';
 import { Director } from '../../assets/models/director';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common';
 
 @Component({
@@ -19,10 +17,9 @@ export class DetailsComponent implements OnInit {
   
   currentId!: number;
   movieDetails!: MovieDetails;
-  faMark = faXmark;
   actor!: string[];
   crew!: string[];
-  defaultImg : string = "assets/models/profile.jpeg";
+  defaultImg : string = "../assets/images/profile.jpeg";
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute,

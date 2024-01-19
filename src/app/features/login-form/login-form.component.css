@@ -41,6 +41,10 @@ h1{
     font-weight:bold;
     color:#C1F2B0;
 }
+button.user{
+    color:#060404;
+    background-color:#C1F2B0;
+}
 @media  screen and (max-width: 350px){
     .form{
         width:80%;

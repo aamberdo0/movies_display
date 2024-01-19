@@ -1,1 +1,13 @@
-{}
+{
+    "hosting": {
+      "public": "dist/movies-sketch",
+      "ignore": ["**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  }
+  

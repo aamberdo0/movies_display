@@ -11,18 +11,18 @@
     <mat-toolbar color="primary">
       <button
         type="button"
+        class="toggle-button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-  
       </button>
       <span class="portal">
         <mat-icon class="fire">local_fire_department</mat-icon>
         Entertainment Portal
       </span>
       <span class="example-spacer"></span>
-      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs>
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs class="menu-back">
         <ul fxLayout fxLayoutGap="20px" class="menu-items">
           <button class="user" mat-raised-button routerLink="/home">
             Home
