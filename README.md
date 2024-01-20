@@ -1,27 +1,40 @@
-# MoviesSketch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+# Movies Display
 
-## Development server
+## 🌠 Key Features:
+A web application authenticates user log in using `Firebase` and `Firestore Database` to store database for multiple users without sending requests each time. Then, only authorized users can access the movie portal  using `Angular` and `Bootstrap` to display the requested components. There, few features will be displayed:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+    1. Search movies
+    2. Display Popular movies
+    3. Display Trending movies
+    4. Display movie details includes actors, director, summary and its rating point.
+    5. Log out
 
-## Code scaffolding
+## Overview
+- `/` - Register account using [Firebase](https://firebase.google.com/).
+- `/login` - Login account .
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+After authenticated: 
+- `/home` - Home page.
+- `/search` - Search movies.
+- `/upcoming` - Upcoming movies.
+- `/trending` - Popular movies.
+- `/details/[id]` - Display movie details based on ID
 
-## Build
+## 🛠 Installation & Set Up
+1.Install the Angular CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    npm install -g @angular/cli
 
-## Running unit tests
+2.Install dependencies
+    
+    npm i
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3.Start the development server
 
-## Running end-to-end tests
+    ng serve & Navigate to `http://localhost:4200/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Built With
+- [Angular](https://angular.io/)
+- [Firebase](https://firebase.google.com/)
+- [Bootstrap](https://getbootstrap.com/)

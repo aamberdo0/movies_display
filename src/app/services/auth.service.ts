@@ -22,7 +22,7 @@ export class AuthService {
   ) {}
 
   getIsLoggedIn(): boolean {
-    return this.isLoggedIn;
+    return !!this.fireAuth.currentUser;
   }
 
   async login(email: string, password: string) {
