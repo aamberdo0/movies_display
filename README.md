@@ -37,4 +37,5 @@ After authenticated:
 ## Built With
 - [Angular](https://angular.io/)
 - [Firebase](https://firebase.google.com/)
+- [Firestore Database](https://firebase.google.com/)
 - [Bootstrap](https://getbootstrap.com/)
