@@ -32,6 +32,14 @@ A web application authenticates user log in using `Firebase` and `Firestore Data
 
     ng serve & Navigate to `http://localhost:4200/
 
+## Challenges + Lesson Learned: 
+- This is my first time using Firebase, including Firestore Database and Firebase Hosting. The difficulty is to store user log in information
+- in both Firestore and Firebase Authenticate so that user can be authenticated using one email. Then Firebase Hosting got me in trouble with
+- its subdirectory folder as I couldn't display the landing page when deploy the web server. 
+
+## Future Improvement:
+- For furture features, this application can allow authenticated user to create their own movie list and store the list using Firestore Database. Furthermore, users can write, update and delete their own movie review. 
+
 ## Built With
 - [Angular](https://angular.io/)
 - [Firebase](https://firebase.google.com/)
