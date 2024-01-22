@@ -2,7 +2,7 @@
 # Movies Display
 
 ## 🌠 Key Features:
-A web application authenticates user log in using `Firebase` and `Firestore Database` to store database for multiple users without sending requests each time. Then, only authorized users can access the movie portal  using `Angular` and `Bootstrap` to display the requested components. There, few features will be displayed:
+A web application authenticates user log in using `Firebase` and `Firestore Database` to store for multiple users without sending requests each time. Then, only authorized users can access the movie portal using `Angular`. There, few features will be displayed:
 
     1. Search movies
     2. Display Popular movies
@@ -13,8 +13,6 @@ A web application authenticates user log in using `Firebase` and `Firestore Data
 ## Overview
 - `/` - Register account using [Firebase](https://firebase.google.com/).
 - `/login` - Login account .
-
-After authenticated: 
 - `/home` - Home page.
 - `/search` - Search movies.
 - `/upcoming` - Upcoming movies.
@@ -34,8 +32,14 @@ After authenticated:
 
     ng serve & Navigate to `http://localhost:4200/
 
+## Challenges + Lesson Learned: 
+- This is my first time using Firebase, including Firestore Database and Firebase Hosting. The difficulty is to store user log in information in both Firestore and Firebase Authenticate so that user can be authenticated using one email. Then Firebase Hosting got me in trouble with its subdirectory folder as I couldn't display the landing page when deploy the web server. 
+
+## Future Improvement:
+- For furture features, this application can allow authenticated user to create their own movie list and store the list using Firestore Database. Furthermore, users can write, update and delete their own movie review. 
+
 ## Built With
 - [Angular](https://angular.io/)
 - [Firebase](https://firebase.google.com/)
 - [Firestore Database](https://firebase.google.com/)
-- [Bootstrap](https://getbootstrap.com/)
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
