@@ -27,7 +27,6 @@ a:visited{
 .form1{
     margin-left: auto;
     margin-right: auto;
-    width: 20rem;
     position: absolute;
     top:30%;
 }
@@ -52,4 +51,12 @@ button.user{
     .buttonContainer{
         flex-direction: column;
     }
+  
+}
+@media  screen and (min-width: 350px){
+    .form1{
+        width:20rem;
+    }
+   
+  
 }

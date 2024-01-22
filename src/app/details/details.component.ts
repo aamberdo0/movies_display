@@ -23,7 +23,6 @@ export class DetailsComponent implements OnInit {
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute,
-    private secondRoute:Router,
     private location:Location,
   ) {}
 

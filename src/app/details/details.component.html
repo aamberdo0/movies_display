@@ -1,8 +1,9 @@
-
 <body>
+<div class="return">
   <a (click)="back()">
     <mat-icon class="close">close</mat-icon>
   </a>
+</div>
 <div class="first-part">
   <div class="square">
     <img class="poster" [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.picture " 
@@ -29,6 +30,7 @@
     </div>
   </div>
 </div>
+
 <div class="cast">
   <h3 class="crew-list">Cast and Crew</h3>
   <div class="cast-list">

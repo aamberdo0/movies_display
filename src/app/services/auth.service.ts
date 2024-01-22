@@ -29,7 +29,7 @@ export class AuthService {
     try {
       await this.fireAuth.signInWithEmailAndPassword(email, password);
       localStorage.setItem('token', 'true');
-      this.router.navigate(['']); // <-- Make sure this is the correct route
+      this.router.navigate(['/home']); 
     } catch (err) {
       this.handleError(err);
     }
@@ -47,7 +47,7 @@ export class AuthService {
     } catch (err) {
       this.handleError(err);
     }
-  }
+}
   
   async logout() {
     try {
@@ -73,7 +73,10 @@ export class AuthService {
   handleError(err: any) {
     this.isLoggedIn = true;
     switch (err.code) {
-      case 'auth/invalid-email':
+      case 'auth/invalid-email':{
+        this.accountMessage = 'Invalid email formatted';
+        break;
+      }
       case 'auth/wrong password':
       case 'auth/user-not-found': {
         this.accountMessage = 'Wrong email address or password';
@@ -81,6 +84,10 @@ export class AuthService {
       }
       case 'auth/email-already-in-use': {
         this.accountMessage = 'Email already used';
+        break;
+      }
+      case 'auth/weak-password':{
+        this.accountMessage = 'Password should be at least 6 characters'
         break;
       }
       default: {

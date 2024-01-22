@@ -1,76 +1,96 @@
-body{
-    color:#C1F2B0;
-    font-size:16px;
+body {
+    color: #C1F2B0;
+    font-size: 16px;
 
 }
-.mat-icon.close{
-    color:#C1F2B0;
-   font-size:40px;
-   position:absolute;
-   left:90%;
-   width:100%;
-   padding:20px 0px;
+.return{
+    text-align: end;
+    padding-right:10px;
 }
-.first-part{
-    padding:80px 10px 40px 10px; 
+.mat-icon.close {
+    color: #C1F2B0;
+    font-size: 40px;
+    padding: 20px 20px;
 }
-.description{
+
+.description {
     line-height: 40px;
 }
-.title{
+
+.title {
     text-align: unset;
     font-weight: bold;
-    
+
 }
-.actor{
+
+.actor {
     font-size: 18px;
 }
-.crew-list{
-    font-weight:bolder;
-    padding:0px 40px;
-    font-size:20px;
+
+.cast {
+    padding: 20px;
 }
-.genre{
-    margin:0 0 8px;
+
+.crew-list {
+    font-weight: bolder;
+    padding: 0px 40px;
+    font-size: 20px;
 }
-.movie-info{
-    margin:0 10px;
+
+.genre {
+    margin: 0 0 8px;
 }
-.poster{
+
+.movie-info {
+    margin: 0 10px;
+}
+
+.poster {
     display: block;
     width: 260px;
     height: 320px;
     border-radius: 15px;
 }
-.rating{
-    margin:0px;
+
+.rating {
+    margin: 0px;
     font-weight: bolder;
     text-align: center;
 }
-.rate{
-   text-transform: uppercase;
-   text-align: center;
+
+.rate {
+    text-transform: uppercase;
+    text-align: center;
 }
-.square{
-    padding:0px 20px;
+
+.square {
+    padding: 0px 20px;
 }
-.first-part,.button-click{
+
+.first-part,
+.button-click {
     display: flex;
     flex-direction: row;
-    margin:20px 10px;
+    margin: 0px 10px;
 }
-.actor-info{
-    display:flex;
+
+.actor-info {
+    display: flex;
     align-items: center;
-    gap:15px;
-    padding:20px;
+    gap: 15px;
+    padding: 20px;
 }
-.cast-list{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    padding:10px 50px;
+
+.cast-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 10px 50px;
+
+
 }
-.circular-container{
+
+.circular-container {
     width: 100px;
     height: 100px;
     position: relative;
@@ -78,68 +98,74 @@ body{
     border-radius: 50%;
 }
 
-.button-click{
+.button-click {
     align-items: center;
-    gap:75px;
-    padding-top:13px;
+    gap: 75px;
+    padding-top: 13px;
 }
-a.user{
-    color:#060404;
-    background-color:#C1F2B0;
+
+a.user {
+    color: #060404;
+    background-color: #C1F2B0;
 }
-@media  screen and (max-width: 705px){
-    .first-part{
+
+@media screen and (max-width: 755px) {
+    .first-part {
         flex-direction: column;
         align-items: center;
-        padding:57px 20px 0px 20px;
+
     }
-    .cast-list{
-        grid-template-columns: repeat(1,1fr);
+    .return{
+        text-align: center;
     }
-    .right-part{
-        padding:20px 0px;
+
+    .cast-list {
+        grid-template-columns: repeat(1, 1fr);
     }
-    .button-click{
+
+    .right-part {
+        padding: 20px 0px;
+    }
+
+    .button-click {
         justify-content: center;
     }
-    .mat-icon.close{
-        top:0%;
-        left:50%;
+
+    .crew-list {
+        text-align: center;
     }
 }
-@media  screen and (max-width: 480px){
-    .title{
-        font-size:1.5em;
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.5em;
+    }
+
+    .cast-list {
+        padding: 0px;
+    }
+
+    .button-click {
+        flex-direction: column;
+        gap: 5px;
     }
 
 }
-@media  screen and (max-width: 390px){
-    .first-part{
-        padding:0px;
+
+@media screen and (max-width: 390px) {
+    .first-part {
+        padding: 0px;
     }
-    .button-click{
-        gap:3rem;
-    }
-    .crew-list{
-        padding:13px 30px;
-    }
-}
-@media  screen and (max-width: 335px){
-    .button-click{
-        flex-direction: column;
-        gap:5px;
-    }
-    .rating,.rate{
-        font-size:1rem;
+
+    .crew-list {
+        padding: 13px 30px;
     }
 }
-@media  screen and (min-width: 1150px){
-    .first-part{
-        margin:0px 180px;
-    }
-}
-@media  screen and (min-width: 915px){
-    .first-part{
-        margin:0px 70px;
+
+@media screen and (max-width: 385px) {
+
+    .rating,
+    .rate {
+        font-size: 1rem;
     }
 }
