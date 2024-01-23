@@ -10,7 +10,7 @@ A web application authenticates user log in using `Firebase` and `Firestore Data
     4. Display movie details includes actors, director, summary and its rating point.
     5. Log out
 
-## Overview
+## Overview 
 - `/` - Register account using [Firebase](https://firebase.google.com/).
 - `/login` - Login account .
 - `/home` - Home page.
@@ -19,7 +19,11 @@ A web application authenticates user log in using `Firebase` and `Firestore Data
 - `/trending` - Popular movies.
 - `/details/[id]` - Display movie details based on ID
 
-## 🛠 Installation & Set Up
+## [Live Demo] 🚀🚀
+https://github.com/aamberdo0/movies_display/assets/122891092/f3b3e3ab-e199-4d04-85ac-e01e1ed28d4e
+
+
+## 🛠 Installation & Set Up ⚒️⚒️
 1.Install the Angular CLI
 
     npm install -g @angular/cli
